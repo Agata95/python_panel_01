@@ -1,4 +1,4 @@
-from day_02_1811.utils import caesar_shift
+from day_02_1811.utils import caesar_shift, caesar_shift_decoder
 
 # Day 02 challenge - Ceasar's Cipher
 # Lets jump into crypto right away! Use the easiest cryptographic mechanism to create an encrypted message!
@@ -25,4 +25,12 @@ if __name__ == '__main__':
     assert(caesar_shift("THE") == "QEB")
     print('Test 01 - ok!')
     assert(caesar_shift("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG") == "QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD")
+    print('Test 02 - ok!')
+    assert(caesar_shift("DAO") == "AXL")
+    print('Test 02 - ok!')
+#
+if __name__ == '__main__':
+    assert(caesar_shift_decoder("QEB") == "THE")
+    print('Test 01 - ok!')
+    assert(caesar_shift_decoder("QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD") == "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG")
     print('Test 02 - ok!')
