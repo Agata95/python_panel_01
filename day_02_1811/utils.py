@@ -10,46 +10,40 @@ def reverse_words(sentence):
 
 def caesar_shift(sentence):
     alphabet = list(string.ascii_uppercase)
-    sentence_list = sentence.split()
-    element_list = []
+    word = ''
 
-    for s in sentence_list:
-        word = ''
-        for el in s:
-            for a in alphabet:
+    for el in sentence:
+        if el == ' ':
+            word += ' '
+        else:
+            for index, a in enumerate(alphabet):
                 if el == a:
-                    index = alphabet.index(a)
                     try:
                         word += alphabet[index - 3]
                     except:
                         index = (len(alphabet) - index - 4)
                         word += alphabet[index - 1]
 
-        element_list.append(word)
-
-    return ' '.join(element_list)
+    return word
 
 
 def caesar_shift_decoder(sentence):
     alphabet = list(string.ascii_uppercase)
-    sentence_list = sentence.split()
-    element_list = []
+    word = ''
 
-    for s in sentence_list:
-        word = ''
-        for el in s:
-            for a in alphabet:
+    for el in sentence:
+        if el == ' ':
+            word += ' '
+        else:
+            for index, a in enumerate(alphabet):
                 if el == a:
-                    index = alphabet.index(a)
                     try:
                         word += alphabet[index + 3]
                     except:
                         index = -(len(alphabet) - index - 4)
                         word += alphabet[index - 1]
 
-        element_list.append(word)
-
-    return ' '.join(element_list)
+    return word
 
 
 def calculator(number_1, sigh, number_2):
