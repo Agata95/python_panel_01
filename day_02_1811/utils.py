@@ -8,7 +8,7 @@ def reverse_words(sentence):
     return ' '.join(element_list)
 
 
-def caesar_shift(sentence):
+def caesar_shift(sentence, action):
     alphabet = list(string.ascii_uppercase)
     word = ''
 
@@ -18,43 +18,45 @@ def caesar_shift(sentence):
         else:
             for index, a in enumerate(alphabet):
                 if el == a:
-                    try:
-                        word += alphabet[index - 3]
-                    except:
-                        index = (len(alphabet) - index - 4)
-                        word += alphabet[index - 1]
+                    if action == 'encoder':
+                        try:
+                            word += alphabet[index - 3]
+                        except:
+                            index = (len(alphabet) - index - 4)
+                            word += alphabet[index - 1]
+                    elif action == 'decoder':
+                        try:
+                            word += alphabet[index + 3]
+                        except:
+                            index = -(len(alphabet) - index - 4)
+                            word += alphabet[index - 1]
 
     return word
 
 
-def caesar_shift_decoder(sentence):
-    alphabet = list(string.ascii_uppercase)
-    word = ''
-
-    for el in sentence:
-        if el == ' ':
-            word += ' '
-        else:
-            for index, a in enumerate(alphabet):
-                if el == a:
-                    try:
-                        word += alphabet[index + 3]
-                    except:
-                        index = -(len(alphabet) - index - 4)
-                        word += alphabet[index - 1]
-
-    return word
-
-
-def calculator(number_1, sigh, number_2):
+def calculator(a: float, sign: str, b: float):
     result = 0
-    if sigh == '+':
-        result = number_1 + number_2
-    elif sigh == '-':
-        result = number_1 - number_2
-    elif sigh == '*':
-        result = number_1 * number_2
-    elif sigh == '/':
-        result = number_1 / number_2
+    if sign == '+':
+        result = a + b
+    elif sign == '-':
+        result = a - b
+    elif sign == '*':
+        result = a * b
+    elif sign == '/':
+        result = a / b
+
+    return result
+
+
+def check_sudoku(sudoku):
+    result = True
+    for index, e in enumerate(sudoku):
+        if result:
+            for el in range(1, 10):
+                if el not in e:
+                    result = False
+                    break
+                else:
+                    result = True
 
     return result
