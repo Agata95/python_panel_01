@@ -8,11 +8,6 @@ def get_introduction():
     return "Hello!"
 
 
-# Here you will get a string return - you can then print it in main
-def get_introduction():
-    return "Hello!"
-
-
 # Here you can pass the parameter, but you don't have to. Default is x=10. Try both ways
 def get_10x_value(x=10):
     return x * 10

@@ -35,28 +35,13 @@ def caesar_shift(sentence, action):
 
 
 def calculator(a: float, sign: str, b: float):
-    result = 0
-    if sign == '+':
-        result = a + b
-    elif sign == '-':
-        result = a - b
-    elif sign == '*':
-        result = a * b
-    elif sign == '/':
-        result = a / b
-
-    return result
+    return eval(str(a) + str(sign) + str(b))
 
 
 def check_sudoku(sudoku):
-    result = True
-    for index, e in enumerate(sudoku):
-        if result:
-            for el in range(1, 10):
-                if el not in e:
-                    result = False
-                    break
-                else:
-                    result = True
+    for element in sudoku:
+        for number in range(1, 10):
+            if number not in element:
+                return False
 
-    return result
+    return True
