@@ -19,7 +19,7 @@ def divisibility(value):
 
 
 # przykładowe wywołanie
-for _ in range(10000):
+for _ in range(100000):
     for some_value in [
         False,
         1,
