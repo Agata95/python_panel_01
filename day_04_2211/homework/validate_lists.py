@@ -4,7 +4,12 @@ def is_sequence_valid(input_list: list, test_list: list) -> bool:
     :param test_list: test, for example [1, 6, 21, 7]
     :return: True in this example
     """
-    return False
+    result_list = [test_num for test_num in test_list for input_num in input_list if test_num == input_num]
+
+    # remove duplicates from list
+    result_list = list(dict.fromkeys(result_list))
+
+    return test_list == result_list
 
 
 if __name__ == "__main__":
