@@ -5,9 +5,11 @@ check if datas in file are power of 3 and count it
 read numbers from file `liczby.txt` and count all of the power of 3
 """
 
+powers = [3**x for x in range(1, 20)]
+
 
 def is_power_of_3(number):
-    return (math.log(number) / math.log(3)) % 1 == 0
+    return number in powers
 
 
 def counting(data_int):
