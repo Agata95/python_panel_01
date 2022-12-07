@@ -1,0 +1,3 @@
+Inny plik z danymi demonstracyjnymi
+Any data inside.
+Something to test.
