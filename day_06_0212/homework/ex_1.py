@@ -1,0 +1,3 @@
+
+def company_structure():
+    ...
