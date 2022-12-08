@@ -1,6 +1,8 @@
-Jest rok 1935. Jesteś młodym szyfrantem Biurze Szyfrów Oddziału II Sztabu Głównego Wojska Polskiego, który mieścił się w Pałacu Saskim w Warszawie u majora Henryka Zygalskiego, jednego z trzech polskich matematyków, którzy rozszyfrowali Enigmę, niemiecką maszynę szygrującą. Twoim zadaniem jest napisanie programu, który pozwoli podjąć dalsze prace nad rozszyfrowaniem niemieckiego kodu szyfrującego. 
+Jest rok 1935. Jesteś młodym szyfrantem Biurze Szyfrów Oddziału II Sztabu Głównego Wojska Polskiego, który mieścił się w Pałacu Saskim w Warszawie u majora Henryka Zygalskiego, jednego z trzech polskich matematyków, którzy rozszyfrowali Enigmę, niemiecką maszynę szyfrującą. Twoim zadaniem jest napisanie programu, który pozwoli podjąć dalsze prace nad rozszyfrowaniem niemieckiego kodu szyfrującego. 
 Zaszyfrowany kod niemiecki to lista 100 wartości numerycznych:
+
 ```python
 [113, 77, 101, 101, 77, 77, 107, 107, 107, 118, 107, 77, 107, 113, 118, 113, 77, 77, 77, 77, 113, 77, 101, 118, 113, 107, 113, 118, 107, 77, 108, 101, 107, 118, 77, 108, 118, 101, 77, 113, 77, 113, 107, 77, 108, 118, 118, 107, 113, 108, 101, 118, 113, 77, 101, 101, 107, 101, 77, 108, 118, 77, 107, 77, 108, 101, 101, 101, 77, 107, 77, 77, 107, 108, 113, 107, 107, 107, 113, 107, 108, 107, 77, 113, 108, 101, 101, 101, 113, 113, 107, 108, 118, 118, 101, 77, 118, 113, 113, 118]
 ```
+
 Twoim zadaniem jest znalezienie wśród tych liczb unikatowych wystąpień każdej z nich, w ten sposób powstanie kolejna lista n - elementów. Szyfrogram to wartości znaków ASCII pomniejszone o 3, analogicznie jak w znanym szyfrze Cezara. Znajdź te litery. Być może od razu znajdziesz szyfrowane słowo. Uwaga! Litery są unikatowe, żadna nie powtarza się. Nie musisz w programie znaleźć dokładnego słowa, wystarczą litery. Resztą zajmnie się zespół majora Zygalskiego.

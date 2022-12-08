@@ -1,1 +1,0 @@
-Stwórz plik CSV zawierający różne dane demonstracyjne, sprawdź, czy potrafisz je wczytać do arkusza kalkulacyjnego.

@@ -33,6 +33,7 @@ def caesar_shift(sentence, action):
 
     return word
 
+caesar_shift([113, 77, 101, 107, 118, 108], 'encoder')
 
 def calculator(a: float, sign: str, b: float):
     return eval(str(a) + str(sign) + str(b))
