@@ -1,0 +1,17 @@
+Stwórz plik CSV zawierający różne dane demonstracyjne, sprawdź, czy potrafisz je wczytać do arkusza kalkulacyjnego.
+
+W pliku demo.csv zrób funkcję generującą przykładowy PESEL:
+- zakres dat urodzenia: 1950 - 1990 (1sze 6 cyfr)
+- reszta cyfr dowolna
+
+zarobki niech będą losowe od 3500 do 5500  / from random import randint
+
+
+dane do CSV:
+imie i nazwisko, data urodzenia rrrr-mm-dd, pesel, nr karty bankowej, zarobki
+
+Adam Jurkiewicz, 19740311, 74031185563, 23452345234523, 4030
+...
+...
+...
+
