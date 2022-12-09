@@ -24,6 +24,6 @@ def add_insured(template: dict) -> dict:
 
     return new_dict
 
-
+# __main__ wykonywana bezpośrednio
 if __name__ == "__main__":
     print("To plik tylko do zaimportowania")
