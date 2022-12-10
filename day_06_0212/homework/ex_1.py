@@ -10,7 +10,8 @@ employees_list = []
 database = []
 
 # todo:
-#  zapisać dane do pliku i z pliku zczytywać
+#  zapisać dane do pliku i z pliku zczytywać,
+#  może lepiej zrobić aby id było w templates i nadawało się automatycznie?
 
 
 def company_structure():
@@ -19,7 +20,7 @@ def company_structure():
             1 - Add new emplyee
             2 - Print info about emplyee
             3 - Print all employees list
-            4 - More
+            4 - Finanse and salary
             Q - Quit
             """)
         choice = input("Check one: ")
@@ -32,6 +33,8 @@ def company_structure():
             print("Employee added.")
         elif choice == '2':
             print_about_employee(database)
+        elif choice == '3':
+            print_all_employees(employees_list)
 
 
 company_structure()

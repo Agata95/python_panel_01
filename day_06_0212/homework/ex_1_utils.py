@@ -53,6 +53,9 @@ def print_all_employee_numbers(database: list):
     print(numbers_list)
 
 
+def print_all_employees(employees_list: list):
+    print(employees_list)
+
 def print_about_employee(database: list):
     number = input("Enter emplyee's number: ")
     if check_number_in_list(number, database):
