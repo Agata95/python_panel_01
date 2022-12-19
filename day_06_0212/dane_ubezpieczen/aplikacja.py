@@ -14,6 +14,7 @@ insured_person = {
     'premium': 0,
 }
 
+# todo: do zrobienia podpunkty 1 i 2
 while True:
     print("""
     1 - Open file

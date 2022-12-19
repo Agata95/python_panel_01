@@ -15,7 +15,7 @@ def save_file(data: dict, file_name: str) -> bool:
 
 def add_insured(template: dict) -> dict:
     if not isinstance(template, dict):
-        return False
+        return {}
 
     new_dict = {}
     for any_key in template:

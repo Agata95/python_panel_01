@@ -7,6 +7,7 @@ template_single_employee = {
 }
 
 employees_list = []
+employees = {}
 database = []
 
 # todo:
@@ -27,11 +28,13 @@ def company_structure():
         if choice.upper() == 'Q':
             break
         elif choice == '1':
-            new = add_new_emplyee(template_single_employee)
+            new = add_new_employee(template_single_employee)
             add_to_list(employees_list, new, database)
             print("Employee added.")
         elif choice == '2':
             print_about_employee(database)
+        elif choice == '3':
+            print_all_employee(database, employees)
 
 
 company_structure()

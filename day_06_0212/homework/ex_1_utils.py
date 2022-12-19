@@ -1,7 +1,7 @@
 import json
 
 
-def add_new_emplyee(template: dict) -> dict:
+def add_new_employee(template: dict) -> dict:
     print("Provide information about new employee:")
 
     new_dict = {}
@@ -60,3 +60,10 @@ def print_about_employee(database: list):
     else:
         print("Wrong number. Please put the right number from list below:")
         print_all_employee_numbers(database)
+
+
+def print_all_employee(database: list, employees: dict):
+    for el in database:
+        employees.update({el['id']: el['data']['name_and_surname']})
+
+    print(json.dumps(employees, indent=4))
