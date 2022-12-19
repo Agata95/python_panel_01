@@ -35,11 +35,9 @@ def company_structure():
         elif choice == '2':
             print_about_employee(database)
         elif choice == '3':
-<<<<<<< HEAD
             print_all_employee(database, employees)
-=======
-            print_all_employees(employees_list)
->>>>>>> 23756ee11dd36289decefea95e3790cfe244aa19
+        elif choice == '4':
+            salary(database)
 
 
 company_structure()
