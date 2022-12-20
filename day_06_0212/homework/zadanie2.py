@@ -1,4 +1,4 @@
-from day_06_0212.homework.ex_1_utils import *
+from day_06_0212.homework.zadanie2_utils import *
 
 template_single_employee = {
     'name_and_surname': None,
@@ -9,10 +9,6 @@ template_single_employee = {
 employees_list = []
 employees = {}
 database = []
-
-# todo:
-#  zapisać dane do pliku i z pliku zczytywać,
-#  może lepiej zrobić aby id było w templates i nadawało się automatycznie?
 
 
 def company_structure():
@@ -37,7 +33,8 @@ def company_structure():
         elif choice == '3':
             print_all_employee(database, employees)
         elif choice == '4':
-            salary(database)
+            salary_dep, dep = salary(database)
+            print(f'For {dep} total salary is {salary_dep}$.')
 
 
 company_structure()

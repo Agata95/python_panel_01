@@ -68,9 +68,23 @@ def print_all_employee(database: list, employees: dict):
 
     print(json.dumps(employees, indent=4))
 
-def salary(database: list) -> float:
-    value = input(f"Enter 'all' or 'name of departament' to print total sum of salary employees all or emplayees of department.\n")
-    if value.upper() == 'ALL':
-        pass
 
-    return 0.0
+def salary(database: list):
+    departments = list(dict.fromkeys([(el['data']['department']).upper() for el in database]))
+    print("Enter 'all' or 'name of department' to print total sum of salary employees all or emplayees of department.")
+    print('Departments:', departments)
+    value = input()
+    salary_all = 0.0
+    dep = ''
+
+    if value.upper() == 'ALL':
+        dep = 'all'
+        for el in database:
+            salary_all += float(el['data']['salary'])
+    elif value.upper() in departments:
+        dep = value.upper()
+        for el in database:
+            if (el['data']['department']).upper() == dep:
+                salary_all += float(el['data']['salary'])
+
+    return salary_all, dep
