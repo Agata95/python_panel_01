@@ -10,8 +10,7 @@ dumper.dump(contents)
 print("-------------")
 print(ic(contents))
 
-
-with open("file1.txt", 'r') as plik:
+with open("file1.txt", 'r', encoding="utf-8") as plik:
     contents = plik.readlines()
 
 print(f"{type(contents)} -> {contents}")
@@ -20,4 +19,3 @@ dumper.dump(contents)
 print("-------------")
 
 print(ic(contents))
-

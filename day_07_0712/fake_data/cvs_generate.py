@@ -10,7 +10,7 @@ def i(n=10000):
 dane = Faker("pl_PL")
 
 
-with open("dane_testowe.csv", mode='w', encoding="windows-1250") as f:
+with open("dane_testowe.csv", mode='w', encoding="utf-8") as f:
     plik_danych = csv.writer(f)
 
     plik_danych.writerow(["Imię i nazwisko", "m^2 pow", "Gaz", "Prąd", "Czynsz", "Woda", "Śmieci"])
