@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  oracle-db:
+    image: oracleinanutshell/oracle-xe-11g:latest
+    ports:
+      - 49161:1521
+      - 5500:5500
+      - 8080:8080
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
