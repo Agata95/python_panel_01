@@ -1,13 +1,14 @@
-
 """
 ubezpieczony ma dane ... itp ...
 mamy ubezpieczonych ...
 co możemy z ubezpieczonym zrobić ...
 """
+from exceptions_insured import BadPeselNumber, PeselNotNumber
 from datetime import date
 from icecream import ic
 from faker import Faker
 import timeit
+
 
 class Ubezpieczony:
     def __init__(self, name: str, birthdate: str, address: str):
@@ -74,23 +75,54 @@ class Ubezpieczony:
         To będziemy refaktoryzować na lekcji....
         i sprawdzać czas wykonania:
         """
-        cyfry_peselu = list(pesel)[:10]
+        cyfry_peselu, liczba_kontrolna = pesel[:10], int(pesel[-1])
         suma = 0
+
+        # tuple działa szybciej niż lista!!!
         wagi = (1, 3, 7, 9, 1, 3, 7, 9, 1, 3)
-        l = len(cyfry_peselu)
-        for el in range(len(cyfry_peselu)):
-            cyfra_new = int(cyfry_peselu[el]) * int(wagi[el])
-            suma += int(cyfra_new)
+
+        for ind, val in enumerate(cyfry_peselu):
+            suma += int(val) * wagi[ind]
+
         reszta = suma % 10
         if reszta == 0:
             cyfra_kontr = 0
         else:
             cyfra_kontr = 10 - reszta
-        if int(list(pesel)[-1]) == int(cyfra_kontr):
+        if liczba_kontrolna == cyfra_kontr:
             self.__pesel = pesel
         else:
             # raise Exception("Błędny PESEL")
             self.__pesel = pesel
+
+    def wprowadz_pesel_4(self, pesel: str):
+        """zwaliduj pesel i wprowadź gdy poprawny, a gdy nie:
+        raise Exception("BAD PESEL")
+        To będziemy refaktoryzować na lekcji....
+        i sprawdzać czas wykonania:
+        """
+        cyfry_peselu, liczba_kontrolna = pesel[:10], int(pesel[-1])
+        suma = 0
+
+        # tuple działa szybciej niż lista!!!
+        wagi = (1, 3, 7, 9, 1, 3, 7, 9, 1, 3)
+
+        for el in pesel:
+            if not el.isdigit():
+                raise PeselNotNumber
+
+        for ind, val in enumerate(cyfry_peselu):
+            suma += int(val) * wagi[ind]
+
+        reszta = suma % 10
+        if reszta == 0:
+            cyfra_kontr = 0
+        else:
+            cyfra_kontr = 10 - reszta
+        if liczba_kontrolna == cyfra_kontr:
+            self.__pesel = pesel
+        else:
+            raise BadPeselNumber
 
     def info(self):
         print(f"Ubezpieczony: {self.name}, urodzony w {self.birthdate}, ma lat:{self.age}")
@@ -102,6 +134,7 @@ ic(timeit.timeit(lambda: ubezpieczony_1.wprowadz_pesel_1("74031105873"), number=
 ic(timeit.timeit(lambda: ubezpieczony_1.wprowadz_pesel_2("74031105873"), number=9999999))
 # nasza refaktoryzowana funkcja.
 ic(timeit.timeit(lambda: ubezpieczony_1.wprowadz_pesel_3("74031105873"), number=9999999))
+ic(timeit.timeit(lambda: ubezpieczony_1.wprowadz_pesel_4("74071105873"), number=9999999))
 """
 ic| timeit.timeit(lambda: ubezpieczony_1.wprowadz_pesel_1("74031105873"), number=9999999): 33.28227858699938
 ic| timeit.timeit(lambda: ubezpieczony_1.wprowadz_pesel_2("74031105873"), number=9999999): 36.438778593999814

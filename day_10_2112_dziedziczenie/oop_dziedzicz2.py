@@ -3,22 +3,29 @@ class Pojazd:
         self.nazwa = nazwa
         self.rok = rok
 
-
     def info(self) -> str:
         return f"To pojazd ogólny - {self.nazwa} / {__class__.__name__}"
 
     def rok_prod(self) -> str:
         return f"Rok produkcji to {self.rok}"
 
+
 pojazd_1 = Pojazd("mysza", 2003)
 pojazd_1.info()
 pojazd_1.rok_prod()
 
-class Van(Pojazd):
-    def __init__(self, nazwa):
-        self.nazwa = nazwa
 
-van = Van("sharan-baranek")
+class Van(Pojazd):
+    def __init__(self, nazwa, rok):
+        self.nazwa = nazwa
+        self.rok = rok
+
+    # dodaję drugi raz tę samą metodę
+    def info(self) -> str:
+        return f"To pojazd ogólny - {self.nazwa} / {__class__.__name__}"
+
+
+van = Van("sharan-baranek", 2014)
 
 print(pojazd_1.info())
 print(pojazd_1.rok_prod())
