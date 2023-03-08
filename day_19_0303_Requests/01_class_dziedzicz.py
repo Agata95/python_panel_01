@@ -20,6 +20,11 @@ class Third(First):
     def third_run(self):
         print(f"running from third - {self.parameter3} - {self.parameter1}")
 
+    def run(self):
+        # najpierw wykonuje się run z First, potem run z Third
+        super().run()
+        print("Teraz run 3")
+
 
 first = First("Gucio")
 second = Second()
