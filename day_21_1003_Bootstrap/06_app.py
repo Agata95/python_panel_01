@@ -31,13 +31,18 @@ def get_data_from_post():
     if create_user_record(DATABASE, email, token):
         created = "Wszystko super, dane w bazie"
 
-        email_from = 'agatka.weltrowska@gmail.com'
+        email_from = 'XXX'
         email_to = email
         email_subject = "Logowanie z hasłem"
         email_login_passwd = 'XXX'
         email_body = f"""
-        Aby się autoryzować, kliknij
-        <a href="127.0.0.1:5000" Link autoryzacyjny dla {token} </a>
+        Aby się autoryzować, kliknij:
+
+        127.0.0.1:5000/auth/{email_to}/{token}
+
+        Link autoryzacyjny dla {token}
+        <hr>
+        {body}
         <hr>
         <h3> Zespół wsparcia </h3>
         """
