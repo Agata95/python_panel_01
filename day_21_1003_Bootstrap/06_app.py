@@ -4,6 +4,7 @@ from random import randint
 from funkcje.smtp_via_gmail import send_email_imap
 
 app = Flask("01_app")
+DATABASE = "users.db"
 
 
 @app.route("/")
@@ -27,7 +28,7 @@ def get_data_from_post():
     body = request.form['inputBody']
 
     created = "Nie udał się zapis do bazy"
-    if create_user_record('users.db', email, token):
+    if create_user_record(DATABASE, email, token):
         created = "Wszystko super, dane w bazie"
 
         email_from = 'agatka.weltrowska@gmail.com'
@@ -55,7 +56,7 @@ def get_data_from_post():
 @app.route("/auth/<user_token>")
 def check_user(user_token):
     from_email = "nic"
-    authorized = check_mail("users.db", from_email, user_token)
+    authorized = check_mail(DATABASE, from_email, user_token)
     return f"Got token: {user_token} / {authorized=}"
 
 
