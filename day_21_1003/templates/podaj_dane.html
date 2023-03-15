@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Podaj nam dane mailowe</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Podaj dane, a my wyślemy link emailem</h5>
+                        <!-- form action - określa, gdzie kierujemy nasze dane -->
+                        <form action="/submit_data" method="POST">
+                            <div class="form-group">
+                                <label for="inputEmail">Email address</label>
+                                <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Wprowadź email">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputBody">Message body</label>
+                                <textarea class="form-control" id="inputBody" name="inputBody" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputDate">Data wiadomości</label>
+                                <input type="date" class="form-control" id="inputDate">
+                            </div>
+                            <button type="submit" class="btn btn-primary">OK - wyślij</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
